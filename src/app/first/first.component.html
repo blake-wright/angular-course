@@ -1,9 +1,25 @@
-<p>first works!</p>
+<label>Server Name</label>
 
-<div class="badge bg-primary text-wrap" style="width: 6rem;">
-  This text should wrap.
-</div>
+<!-- <input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+> -->
 
-<div class="text-nowrap bd-highlight" style="width: 8rem;">
-  This text should overflow the parent.
-</div>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+>
+
+<p>{{ serverName }}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+
+<p>{{ serverCreationStatus }}</p>
