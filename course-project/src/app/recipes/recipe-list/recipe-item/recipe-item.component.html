@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<a class="list-group-item d-flex flex-column" href="#" (click)="userClickedRecipe()">
+  <div>
+    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+    <p class="list-group-item-text">{{ recipe.description }}</p>
+  </div>
+  <div class="mt-2">
+    <img class="img-fluid" [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 250px;">
+  </div>
+</a>

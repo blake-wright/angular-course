@@ -4,16 +4,27 @@
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
-          <input class="form-control" type="text" id="name">
+          <input
+            class="form-control"
+            type="text"
+            id="name"
+            #nameInput
+          >
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input class="form-control" type="number" id="amount">
+          <input
+            class="form-control"
+            type="number" 
+            id="amount"
+            #amountInput
+          >
         </div>
         <div class="col-xs-12 d-flex gap-2 mt-3">
           <button
             class="btn btn-success"
-            type="submit"
+            type="button"
+            (click)="onAddItem()"
           >
             Add
           </button>
@@ -25,7 +36,7 @@
           </button>
           <button
             class="btn btn-primary"
-            type="submit"
+            type="button"
           >
             Clear
           </button>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { Recipe } from '../recipe.model';
@@ -18,6 +18,8 @@ import { ShoppingEditComponent } from '../../shopping-list/shopping-edit/shoppin
   styleUrl: './recipe-list.component.scss',
 })
 export class RecipeListComponent {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+  
   recipes: Recipe[] = [
     new Recipe(
       'Chocco Rugelach',
@@ -30,4 +32,8 @@ export class RecipeListComponent {
       'https://bakesbybrownsugar.com/wp-content/uploads/2021/11/Apple-Cranberry-Crumble-Pie-2.jpg.webp'
     ),
   ];
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }

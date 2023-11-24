@@ -3,19 +3,9 @@
     <button class="btn btn-success mx-0">New Recipe</button>
   </div>
 </div>
+
 <hr>
-<div class="row list-group g-0">
-  @for (recipe of recipes; track $index) {
-    <a class="list-group-item clearfix" href="#">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-        <p class="list-group-item-text">{{recipe.description}}</p>
-      </div>
-      <span class="pull-right">
-        <img class="img-responsive" [src]="recipe.imagePath" alt="{{recipe.name}}" style="max-height: 250px;">
-      </span>
-    </a>
-  }
-  <app-recipe-item></app-recipe-item>
-</div>
-<app-shopping-list></app-shopping-list>
+
+@for (recipe of recipes; track $index) {
+  <app-recipe-item class="row list-group g-0" [recipe]="recipe" (onRecipeSelected)="onRecipeSelected(recipe)"></app-recipe-item>
+}
