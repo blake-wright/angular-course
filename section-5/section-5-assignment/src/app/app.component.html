@@ -24,7 +24,7 @@
 <div class="row">
   <div class="col-xs-12">
     <div *ngFor="let intervalNum of allNumbers">
-      <app-even *ngIf="intervalNum % 2 === 0" [displayText]="intervalNum"></app-even>
+      <app-even *ngIf="intervalNum % 2 === 0" [ngClass]="{'bg-success': intervalNum % 2 === 0}" [displayText]="intervalNum"></app-even>
       <app-odd *ngIf="intervalNum % 2 !== 0" [displayText]="intervalNum"></app-odd>
     </div>
   </div>
