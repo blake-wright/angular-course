@@ -24,8 +24,19 @@
 <div class="row">
   <div class="col-xs-12">
     <div *ngFor="let intervalNum of allNumbers">
-      <app-even *ngIf="intervalNum % 2 === 0" [ngClass]="{'bg-success': intervalNum % 2 === 0}" [displayText]="intervalNum"></app-even>
-      <app-odd *ngIf="intervalNum % 2 !== 0" [displayText]="intervalNum"></app-odd>
+      <app-even
+        *ngIf="intervalNum % 2 === 0"
+        [displayText]="intervalNum"
+      ></app-even>
+      <app-odd
+        *appUnless="!(intervalNum % 2 !== 0)"
+        [displayText]="intervalNum"
+        ></app-odd>
+    </div>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">Value is 5</p>
+      <p *ngSwitchCase="10">Value is 10</p>
+      <p *ngSwitchDefault>Value is Default</p>
     </div>
   </div>
 </div>

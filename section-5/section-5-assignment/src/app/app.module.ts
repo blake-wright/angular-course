@@ -9,6 +9,8 @@ import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { UnlessDirective } from './unless/unless.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
   ],
   providers: [],

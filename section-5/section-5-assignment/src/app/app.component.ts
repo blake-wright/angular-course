@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   allNumbers: number[] = [];
+  value = 10;
 
   onIntervalEmit(lastInterval: number): void {
     this.allNumbers.push(lastInterval);
